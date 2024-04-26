@@ -4,8 +4,7 @@ const is_prod = process.env.NODE_ENV
 
 const sequelize = is_prod ? new Sequelize(process.env.DATABASE_URL,
     {
-        dialect: 'postgres',
-        logging: false
+        ssl: {rejectUnauthourized: false}
     }) :
     new Sequelize(
         process.env.DB_NAME,
