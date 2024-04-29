@@ -5,7 +5,7 @@ const is_prod = process.env.NODE_ENV
 const sequelize = is_prod ? new Sequelize(process.env.DATABASE_URL,
     {
         dialectOptions: {
-            ssl: { require: true, rejectUnauthourized: false }
+            ssl: { require: true, rejectUnauthorized: false }
         }
     }) :
     console.log(process.env.DB_PASSWORD)
