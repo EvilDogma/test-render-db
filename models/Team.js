@@ -1,5 +1,6 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../db/connect')
+console.log(sequelize)
 class Team extends Model { }
 
 Team.init(
@@ -28,9 +29,9 @@ Team.init(
     },
     {
         // Other model options go here
-        sequelize: sequelize, // We need to pass the connection instance
+        sequelize, // We need to pass the connection instance
         modelName: 'team', // We need to choose the model name
-    },
+    }
 )
 
 module.exports = { Team }
